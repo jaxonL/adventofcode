@@ -32,8 +32,8 @@ I didn't like not seeing an indication of running code (apart from a hanging ter
 
 I was curious as to how long the other ~~elves~~ programmers' solution took, so I dropped by the [subreddit](https://www.reddit.com/r/adventofcode/) to see if there were people discussing it (all the while trying to avoid seeing explicit solutions, because I hadn't gotten my star yet). As my code had already run for 5 s with no indication of ending and others were talking about fractions of milliseconds, I had to be doing something wrong, right? I set up some timers with `console.time` and commented out my debug logs. Turns out, sending information to an output stream was what slowed down the code.
 
-![Screenshot of timing results][timingResults]
+![Screenshot of timing results](https://github.com/jaxonL/adventofcode/raw/master/days/1/timing.png)
 
 \* Turns out (unsurprisingly) that my code is inefficient (since there is no need to save and check the number of times a frequency is visited, we just need to save the visited frequency down and check if it is in our list). I did have a hunch that there would be a mathematical way to determine the frequency. Instead of grabbing a pen and paper and trying to find a pattern though, I opted to just brute force it. [This post here](https://www.reddit.com/r/adventofcode/comments/a20646/2018_day_1_solutions/eaukxu5/) sums it up pretty neatly. Congruence and modular arithmetic -- of course! Ah, the good, warm, fuzzy memories of Math 135 are coming back...
 
-[timingResults]: https://github.com/jaxonL/adventofcode/raw/master/days/1/timing.png
+All in all, I'd say day one wasn't bad. It was definitely an easy problem at first glance. I consider myself lucky to have received the input I did, because if it were, for example, just \[+10000000, -9999999\], it would have been a completely different runtime. Upon revisiting the solutions, I became aware of my unnecessary antics and non-optimal implementation. I'll try to keep in mind optimisation and minimise brute-forcing for the upcoming challenges. I don't think I'll be tackling day 2's challenge at midnight though; my nest of blankets seems very cosy as of right now.
