@@ -3,6 +3,8 @@ const fs = require('fs');
 class ChronoCalibrator {
   constructor() {
     this.currentFrequency = 0;
+    // partially unnecessary (didn't need the # of times it was visited,
+    // just whether it was used before or not)
     this.visitedFrequencies = { 0: 1 };
     this.timesCalibrated = 0;
   }
@@ -15,10 +17,15 @@ class ChronoCalibrator {
     const visitedTimes = (this.visitedFrequencies[this.currentFrequency] != null) ?
       this.visitedFrequencies[this.currentFrequency] : 0;
 
+    // not useful, since we know it will either never visited before (so set to 1)
+    // or visited once (so result would be 2, but I could have just returned with
+    // the correct frequency)
     this.visitedFrequencies[this.currentFrequency] = visitedTimes + 1;
     this.timesCalibrated += 1;
     // console.log('visited ' + visitedTimes);
     // update the visited values with true/false if visited
+
+    // inefficient
     if(this.visitedFrequencies[this.currentFrequency] === 2) {
       return true;
     }
