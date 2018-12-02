@@ -4,7 +4,6 @@ class ChronoCalibrator {
   constructor() {
     this.currentFrequency = 0;
     this.visitedFrequencies = { 0: 1 };
-    this.goodFrequency = null;
     this.timesCalibrated = 0;
   }
 
