@@ -19,7 +19,7 @@ Since I was used to coding with TypeScript at work and that it was basically jus
 class ChronoCalibrator {
   currentFrequency = 0;
   timesCalibrated = { 0: 1 };
-  
+
   calibrateFrequency = (calibrateBy) => { /* ... */ }
   calibrateFromArray = (calibrationArr) => { /* ... */ }
   // ...
@@ -37,3 +37,37 @@ I was curious as to how long the other ~~elves~~ programmers' solution took, so 
 \* As it is, my code is (unsurprisingly) inefficient (since there is no need to save and check the number of times a frequency is visited, we just need to save the visited frequency down and check if it is in our list). I did have a hunch that there would be a mathematical way to determine the frequency. Instead of grabbing a pen and paper and trying to find a pattern though, I opted to just brute force it. [This post here](https://www.reddit.com/r/adventofcode/comments/a20646/2018_day_1_solutions/eaukxu5/) sums it up pretty neatly. Congruence and modular arithmetic -- of course! Ah, the good, warm, fuzzy memories of Math 135 are coming back...
 
 All in all, I'd say day one wasn't bad. It was definitely an easy problem at first glance. I consider myself lucky to have received the input I did, because if it were, for example, just \[+10000000, -9999999\], it would have been a completely different runtime. Upon revisiting the solutions, I became aware of my unnecessary antics and non-optimal implementation. I'll try to keep in mind optimisation and minimise brute-forcing for the upcoming challenges. I don't think I'll be tackling day 2's challenge at midnight though; my nest of blankets seems very cosy as of right now.
+
+## Day 2 and Day 3 (Inventory Management System and Prototype Fabric)
+I started both of these days very late in the day. I also decided to try my hand at python (not great). To me, these two days were levels above the first day. I did attempt to code something somewhat efficient (but not space efficient) in the first part of day 2. Not sure how that compares, but it did the job. I read a bit on how to approach the second part; sadly my tiny, tired brain couldn't think of anything. Despite my thoughts wandering through the concepts of compressed tries and Levenshtein distances, I ended up not reaching for the second star.
+
+Determined to figure out day 3, I jumped in as soon as I got back from work. I decided to brute force my way first (solve it, then refine/read about it). I made sure to work on a small scale first, then work my way up with the given input. 2D ~~arrays~~ lists in python was something new for me. The following took me quite a while to figure out what was wrong:
+
+```python
+oneColumn = [ 0 for x in range(squareLength + 1)]
+squareFabric = [oneColumn for x in range(squareLength + 1)]
+
+squareFabric[0][0] = 1
+```
+
+The above code results in the entire 'first column' (so for `squareFabric[x][0]`) to equal 1. Visually:
+
+```python
+# expected:
+# [1, 0, 0, ...]
+# [0, 0, 0, ...]
+# [0, 0, 0, ...]
+# [...]
+
+# actual:
+[1, 0, 0, ...]
+[1, 0, 0, ...]
+[1, 0, 0, ...]
+[...]
+```
+
+Interestingly enough, finding the overlapping square inches of fabric reminded me of the coding challenge I had to complete during the group interview phase at my current internship. Furthermore, during the actual interview, I remember my interviewers asking about possible optimisations for that similar question. Unfortunately for me, I don't quite remember my answers...
+
+In the end, because I wanted to complete the challenge before midnight, I went with a subpar algorithm that first builds an array of overlapped points, then one by one compares whether a specified rectangle contains that point. As soon as it did, I stopped checking for other points and passed onto the next rectangle. I had a total of 118322 points to check over a maximum enclosing square of 999 x 999. Not efficient at all :')
+
+(I also don't quite know why my commented code didn't work... oh well.)
