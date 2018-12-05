@@ -71,3 +71,25 @@ Interestingly enough, finding the overlapping square inches of fabric reminded m
 In the end, because I wanted to complete the challenge before midnight, I went with a subpar algorithm that first builds an array of overlapped points, then one by one compares whether a specified rectangle contains that point. As soon as it did, I stopped checking for other points and passed onto the next rectangle. I had a total of 118322 points to check over a maximum enclosing square of 999 x 999. Not efficient at all :')
 
 (I also don't quite know why my commented code didn't work... oh well.)
+
+## Day 4 (Repose Record)
+
+As I wrapped up day 3 with 20 minutes to spare, I stayed awake long enough to peek at the first part of day 4. And man, was that a bad idea. I ended up having it simmering in the back of mind for the whole day before I got the chance to sit in front of my laptop and flesh a solution out. I wanted to try something new: detail my thought process as I code the solution (instead of revisiting it or leaving random, achronological comments).
+
+The problem at hand:
+* find the id of the guard who slept the most
+  * meaning that we have to sum up the times they were asleep
+* find the minute where the guard was asleep the most
+  * meaning that we have to also store the times the guard was asleep
+
+How my brain wants to tackle it:
+* maybe having a library to parse the dates out of the first segment of the string would help
+* we know there is only one guard per night (that may start their shift @ 23:xx instead of 00:xx)
+* only the minutes matter for the asleep/awake events
+* we only care about the first character of the event (*f* for 'falls asleep', *w* for 'wakes up', and *G* for 'Guard #xxx begins shift')
+
+Before writing down these points, I wanted to have some sort of map/~~array~~list/dictionary where the id of the guard and the date would be some sort of primary and secondary keys (was working on DynamoDB tables today, so maybe that had to do with it) and storing time intervals. Having the outline in front of me though prompted me to think: what about just storing the numbers from 0 to 59 (for the minutes of a shift) and each having a counter in them (for how many times the guard has slept on that minute). I'll take a shot at it and report back on my results. (I have a feeling that most, if not all, of my solutions are going to be not great on time and space cost.)
+
+Personal goals of the day:
+* get more comfortable with list
+* start putting code into functions
