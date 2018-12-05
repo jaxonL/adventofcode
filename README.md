@@ -87,9 +87,23 @@ How my brain wants to tackle it:
 * we know there is only one guard per night (that may start their shift @ 23:xx instead of 00:xx)
 * only the minutes matter for the asleep/awake events
 * we only care about the first character of the event (*f* for 'falls asleep', *w* for 'wakes up', and *G* for 'Guard #xxx begins shift')
+* we shouldn't even care about the year (1518) as it ~~shouldn't~~ doesn't change
+  * but is 1518 a leap year? (Google says no, phew. No need to consider February edge cases)
 
 Before writing down these points, I wanted to have some sort of map/~~array~~list/dictionary where the id of the guard and the date would be some sort of primary and secondary keys (was working on DynamoDB tables today, so maybe that had to do with it) and storing time intervals. Having the outline in front of me though prompted me to think: what about just storing the numbers from 0 to 59 (for the minutes of a shift) and each having a counter in them (for how many times the guard has slept on that minute). I'll take a shot at it and report back on my results. (I have a feeling that most, if not all, of my solutions are going to be not great on time and space cost.)
 
 Personal goals of the day:
 * get more comfortable with list
 * start putting code into functions
+
+Stuff I ran into:
+* Apparently, python doesn't have switches? That's... new.
+* The cases I have to pay attention to are the 'guard x begins shift' ones, as the day value can be that of the "previous" day (right before midnight). The wake/sleep events happen for sure during 00:00 and 00:59, so the date does not need to be manipulated.
+* Waking up and falling asleep are only the extremities of a range. I need to extract that information so that I can counterise the minutes
+  * Easiest way would be to sort the array by date and minute
+  * I know that w/f events are toggles; maybe I can use that to my advantage...
+* somehow, I thought that I was shallow copying some ints but ended up being my own sortkey algorithm mistake (I multiplied the date by 1000 instead of 10000, which had some overlap with the time)
+
+Part 1 is done at this point (after much debugging). Luckily, I can re-use most of my code for part 2 for an inefficient solution. After spending 10 minutes on not comprehending why I wasn't printing the right result (hint: because I was still printing 'sleepiest' instead of 'mostTimesAsleep'), I finally got my answer and submitted it.
+
+I think I've gotten to that point in a relationship with a new language where you're frustrated at it and questioning why you still want to continue investing in that relationship (to be fair though, most of the onus is still on programming errors...).
