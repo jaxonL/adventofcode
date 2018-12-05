@@ -57,6 +57,8 @@ def parseReposeRecords(pathToFile):
     # allRecords = [parseSingleRecord(line) for line in inputFile if line.strip() and parseSingleRecord(line)]
     allRecords = [parseSingleRecord(line) for line in inputFile if line.strip()]
 
+    inputFile.close()
+
     # continuing on...
     # once we have a dutybook, no need to sort
     # no wait -- still require sorting

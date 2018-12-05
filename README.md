@@ -107,3 +107,7 @@ Stuff I ran into:
 Part 1 is done at this point (after much debugging). Luckily, I can re-use most of my code for part 2 for an inefficient solution. After spending 10 minutes on not comprehending why I wasn't printing the right result (hint: because I was still printing 'sleepiest' instead of 'mostTimesAsleep'), I finally got my answer and submitted it.
 
 I think I've gotten to that point in a relationship with a new language where you're frustrated at it and questioning why you still want to continue investing in that relationship (to be fair though, most of the onus is still on programming errors...).
+
+### Bonus -- Complete day 2 part 2
+
+Day 2 part 2, for the O(n!) solution I had, did not require that much time to implement. Maybe I was just trying to optimise too much that I scared myself into not solving it until I could conceive of the perfect solution (and we all know that perfect code does not exist). I went with a simple letter-double checking algorithm that could short-circuit as soon as the two package ids differed in letters at two different positions. It ran fairly fast (no benchmarking), even with print statements.
