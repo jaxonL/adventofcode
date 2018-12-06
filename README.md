@@ -121,7 +121,7 @@ a. iteratively:
   3. if the difference in ascii code between the two chars are ['A' - 'a'] (off the top of my head that's 97 - 64? (edited to add: ~~yas~~ actually no; A = 67 and a = 97)) (absolute value that), do not append to the string AND remove last appended char
   4. repeat step 3 with the last char in the buffer until we don't match
   5. in case of a no-match, append the char and repeat
-  
+
 b. recursively:
   1. read in entire string
   2. do passes on the string until we can't reduce it anymore
@@ -129,3 +129,20 @@ b. recursively:
 Visibly, I have thought out the iterative process a lot more than the recursive one. (This problem just seems like it would do well in recursion, which is why I even mention it. However, after typing out my thoughts, I see that loops just might do the trick (in linear time probably too!).) Now to wrestle with python and getting the results I want...
 
 I ended up spending an hour on the problem. Sleep deprivation while trying to code is not good, as demonstrated by me trying to obtain a polymer of length 10 -- somehow, I had read that the resulting polymer would have 10 units and the question was asking for the string obtained. When I jumped onto the project again after being away from it for 17 hours, I still had that belief until I went and re-read the question. My first answer was too high. A nagging feeling told me that I was probably off by one. Sure enough, I waited out the 60 seconds (ready to restart the problem if needed), submitted the length I obtained - 1, and unlocked part 2.
+
+Edited to add: my off-by-one error comes from an extra whitespace appended to the end of my string buffer. Weird, but fixed with some stripping on input read.
+
+[First reaction upon reading part 2 (censored version because I want to appear professional).](https://youtu.be/M1LpvApZtQ8)
+
+But then, I let my mind wander and think of other possible ways to solve this:
+
+For every possible letter, remove the set of it, reduce the polymer, then count its length.
+  * I don't need to tell you why that's a bad idea. For reference, this is originally why I was so er, repulsed, at first.
+
+... (thinking) ...
+
+The polymer reacting condition reminds me of that one coding question where you had to match up brackets. The solution involved using a stack to keep track of what was being parsed.
+
+... (more thinking) ...
+
+Continuing on with the stack idea, we can find the character we want to remove by going through the string and "counterising" every 'possible removal' per character removed (case not-withstanding). Enter my O(n^2) `getFoldOccurences` that estimate the number of reactions (which I call fold) that occur when a character is removed. Once that was found, we just needed to remove the character that invoked the most folds and pass the result through our polymer reduction algorithm again. (I had to output stuff into another file and then read the code from there; a lazy layman's way to approach the issue at hand. Forgive the countless `print`s scattered throughout the code.)
