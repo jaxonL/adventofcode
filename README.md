@@ -118,7 +118,7 @@ I'm not asleep at 12, so I open my advent challenge. This time, it's parsing! Or
 a. iteratively:
   1. have a base string/buffer to which we add chars
   2. read in the input, 1 char at a time
-  3. if the difference in ascii code between the two chars are ['A' - 'a'] (off the top of my head that's 97 - 64? (edited to add: ~~yas~~ actually no; A = 67 and a = 97)) (absolute value that), do not append to the string AND remove last appended char
+  3. if the difference in ascii code between the two chars are ['A' - 'a'] (off the top of my head that's 97 - 64? (edited to add: actually no; A = 65 and a = 97)) (absolute value that), do not append to the string AND remove last appended char
   4. repeat step 3 with the last char in the buffer until we don't match
   5. in case of a no-match, append the char and repeat
 
