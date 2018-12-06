@@ -121,6 +121,7 @@ a. iteratively:
   3. if the difference in ascii code between the two chars are ['A' - 'a'] (off the top of my head that's 97 - 64? (edited to add: ~~yas~~ actually no; A = 67 and a = 97)) (absolute value that), do not append to the string AND remove last appended char
   4. repeat step 3 with the last char in the buffer until we don't match
   5. in case of a no-match, append the char and repeat
+  
 b. recursively:
   1. read in entire string
   2. do passes on the string until we can't reduce it anymore
