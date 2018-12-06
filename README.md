@@ -112,8 +112,9 @@ I think I've gotten to that point in a relationship with a new language where yo
 
 Day 2 part 2, for the O(n!) solution I had, did not require that much time to implement. Maybe I was just trying to optimise too much that I scared myself into not solving it until I could conceive of the perfect solution (and we all know that perfect code does not exist). I went with a simple letter-double checking algorithm that could short-circuit as soon as the two package ids differed in letters at two different positions. It ran fairly fast (no benchmarking), even with print statements.
 
-## Day 5
+## Day 5 (Alchemical Reduction)
 I'm not asleep at 12, so I open my advent challenge. This time, it's parsing! Or, something of the sort. Part 1 at least doesn't look that complicated, and I have two ideas of what I can do:
+
 a. iteratively:
   1. have a base string/buffer to which we add chars
   2. read in the input, 1 char at a time
