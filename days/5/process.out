@@ -1,0 +1,917 @@
+expected: ApTDILBt
+last ind -1 nothing to compare to
+X  -- read x -- comparing to X at ind 0
+	 X x match
+	inner loop; new buffer:
+last ind -1 nothing to compare to
+S  -- read s -- comparing to S at ind 0
+	 S s match
+	inner loop; new buffer:
+last ind -1 nothing to compare to
+d  -- read D -- comparing to d at ind 0
+	 d D match
+	inner loop; new buffer:
+last ind -1 nothing to compare to
+I  -- read i -- comparing to I at ind 0
+	 I i match
+	inner loop; new buffer:
+last ind -1 nothing to compare to
+j  -- read N -- comparing to j at ind 0
+jN  -- read n -- comparing to N at ind 1
+	 N n match
+	inner loop; new buffer: j
+	reverse comparison - read J -- comparing to j at ind 0
+	 j J match
+	inner loop; new buffer:
+last ind -1 nothing to compare to
+A  -- read C -- comparing to A at ind 0
+AC  -- read s -- comparing to C at ind 1
+ACs  -- read z -- comparing to s at ind 2
+ACsz  -- read Z -- comparing to z at ind 3
+	 z Z match
+	inner loop; new buffer: ACs
+	reverse comparison - read S -- comparing to s at ind 2
+	 s S match
+	inner loop; new buffer: AC
+	reverse comparison - read c -- comparing to C at ind 1
+	 C c match
+	inner loop; new buffer: A
+	reverse comparison - read Z -- comparing to A at ind 0
+AZ  -- read f -- comparing to Z at ind 1
+AZf  -- read F -- comparing to f at ind 2
+	 f F match
+	inner loop; new buffer: AZ
+	reverse comparison - read h -- comparing to Z at ind 1
+AZh  -- read H -- comparing to h at ind 2
+	 h H match
+	inner loop; new buffer: AZ
+	reverse comparison - read Q -- comparing to Z at ind 1
+AZQ  -- read y -- comparing to Q at ind 2
+AZQy  -- read Y -- comparing to y at ind 3
+	 y Y match
+	inner loop; new buffer: AZQ
+	reverse comparison - read r -- comparing to Q at ind 2
+AZQr  -- read R -- comparing to r at ind 3
+	 r R match
+	inner loop; new buffer: AZQ
+	reverse comparison - read q -- comparing to Q at ind 2
+	 Q q match
+	inner loop; new buffer: AZ
+	reverse comparison - read z -- comparing to Z at ind 1
+	 Z z match
+	inner loop; new buffer: A
+	reverse comparison - read d -- comparing to A at ind 0
+Ad  -- read X -- comparing to d at ind 1
+AdX  -- read T -- comparing to X at ind 2
+AdXT  -- read t -- comparing to T at ind 3
+	 T t match
+	inner loop; new buffer: AdX
+	reverse comparison - read x -- comparing to X at ind 2
+	 X x match
+	inner loop; new buffer: Ad
+	reverse comparison - read D -- comparing to d at ind 1
+	 d D match
+	inner loop; new buffer: A
+	reverse comparison - read E -- comparing to A at ind 0
+AE  -- read e -- comparing to E at ind 1
+	 E e match
+	inner loop; new buffer: A
+	reverse comparison - read N -- comparing to A at ind 0
+AN  -- read n -- comparing to N at ind 1
+	 N n match
+	inner loop; new buffer: A
+	reverse comparison - read G -- comparing to A at ind 0
+AG  -- read g -- comparing to G at ind 1
+	 G g match
+	inner loop; new buffer: A
+	reverse comparison - read O -- comparing to A at ind 0
+AO  -- read a -- comparing to O at ind 1
+AOa  -- read A -- comparing to a at ind 2
+	 a A match
+	inner loop; new buffer: AO
+	reverse comparison - read c -- comparing to O at ind 1
+AOc  -- read C -- comparing to c at ind 2
+	 c C match
+	inner loop; new buffer: AO
+	reverse comparison - read M -- comparing to O at ind 1
+AOM  -- read c -- comparing to M at ind 2
+AOMc  -- read C -- comparing to c at ind 3
+	 c C match
+	inner loop; new buffer: AOM
+	reverse comparison - read L -- comparing to M at ind 2
+AOML  -- read l -- comparing to L at ind 3
+	 L l match
+	inner loop; new buffer: AOM
+	reverse comparison - read M -- comparing to M at ind 2
+AOMM  -- read m -- comparing to M at ind 3
+	 M m match
+	inner loop; new buffer: AOM
+	reverse comparison - read o -- comparing to M at ind 2
+AOMo  -- read g -- comparing to o at ind 3
+AOMog  -- read Q -- comparing to g at ind 4
+AOMogQ  -- read e -- comparing to Q at ind 5
+AOMogQe  -- read E -- comparing to e at ind 6
+	 e E match
+	inner loop; new buffer: AOMogQ
+	reverse comparison - read q -- comparing to Q at ind 5
+	 Q q match
+	inner loop; new buffer: AOMog
+	reverse comparison - read G -- comparing to g at ind 4
+	 g G match
+	inner loop; new buffer: AOMo
+	reverse comparison - read g -- comparing to o at ind 3
+AOMog  -- read F -- comparing to g at ind 4
+AOMogF  -- read f -- comparing to F at ind 5
+	 F f match
+	inner loop; new buffer: AOMog
+	reverse comparison - read G -- comparing to g at ind 4
+	 g G match
+	inner loop; new buffer: AOMo
+	reverse comparison - read y -- comparing to o at ind 3
+AOMoy  -- read Y -- comparing to y at ind 4
+	 y Y match
+	inner loop; new buffer: AOMo
+	reverse comparison - read u -- comparing to o at ind 3
+AOMou  -- read U -- comparing to u at ind 4
+	 u U match
+	inner loop; new buffer: AOMo
+	reverse comparison - read O -- comparing to o at ind 3
+	 o O match
+	inner loop; new buffer: AOM
+	reverse comparison - read I -- comparing to M at ind 2
+AOMI  -- read i -- comparing to I at ind 3
+	 I i match
+	inner loop; new buffer: AOM
+	reverse comparison - read Y -- comparing to M at ind 2
+AOMY  -- read y -- comparing to Y at ind 3
+	 Y y match
+	inner loop; new buffer: AOM
+	reverse comparison - read h -- comparing to M at ind 2
+AOMh  -- read H -- comparing to h at ind 3
+	 h H match
+	inner loop; new buffer: AOM
+	reverse comparison - read l -- comparing to M at ind 2
+AOMl  -- read L -- comparing to l at ind 3
+	 l L match
+	inner loop; new buffer: AOM
+	reverse comparison - read m -- comparing to M at ind 2
+	 M m match
+	inner loop; new buffer: AO
+	reverse comparison - read U -- comparing to O at ind 1
+AOU  -- read u -- comparing to U at ind 2
+	 U u match
+	inner loop; new buffer: AO
+	reverse comparison - read l -- comparing to O at ind 1
+AOl  -- read A -- comparing to l at ind 2
+AOlA  -- read U -- comparing to A at ind 3
+AOlAU  -- read K -- comparing to U at ind 4
+AOlAUK  -- read k -- comparing to K at ind 5
+	 K k match
+	inner loop; new buffer: AOlAU
+	reverse comparison - read u -- comparing to U at ind 4
+	 U u match
+	inner loop; new buffer: AOlA
+	reverse comparison - read d -- comparing to A at ind 3
+AOlAd  -- read D -- comparing to d at ind 4
+	 d D match
+	inner loop; new buffer: AOlA
+	reverse comparison - read O -- comparing to A at ind 3
+AOlAO  -- read o -- comparing to O at ind 4
+	 O o match
+	inner loop; new buffer: AOlA
+	reverse comparison - read D -- comparing to A at ind 3
+AOlAD  -- read d -- comparing to D at ind 4
+	 D d match
+	inner loop; new buffer: AOlA
+	reverse comparison - read a -- comparing to A at ind 3
+	 A a match
+	inner loop; new buffer: AOl
+	reverse comparison - read L -- comparing to l at ind 2
+	 l L match
+	inner loop; new buffer: AO
+	reverse comparison - read G -- comparing to O at ind 1
+AOG  -- read R -- comparing to G at ind 2
+AOGR  -- read r -- comparing to R at ind 3
+	 R r match
+	inner loop; new buffer: AOG
+	reverse comparison - read g -- comparing to G at ind 2
+	 G g match
+	inner loop; new buffer: AO
+	reverse comparison - read o -- comparing to O at ind 1
+	 O o match
+	inner loop; new buffer: A
+	reverse comparison - read D -- comparing to A at ind 0
+AD  -- read d -- comparing to D at ind 1
+	 D d match
+	inner loop; new buffer: A
+	reverse comparison - read D -- comparing to A at ind 0
+AD  -- read d -- comparing to D at ind 1
+	 D d match
+	inner loop; new buffer: A
+	reverse comparison - read G -- comparing to A at ind 0
+AG  -- read g -- comparing to G at ind 1
+	 G g match
+	inner loop; new buffer: A
+	reverse comparison - read R -- comparing to A at ind 0
+AR  -- read r -- comparing to R at ind 1
+	 R r match
+	inner loop; new buffer: A
+	reverse comparison - read u -- comparing to A at ind 0
+Au  -- read U -- comparing to u at ind 1
+	 u U match
+	inner loop; new buffer: A
+	reverse comparison - read h -- comparing to A at ind 0
+Ah  -- read J -- comparing to h at ind 1
+AhJ  -- read L -- comparing to J at ind 2
+AhJL  -- read l -- comparing to L at ind 3
+	 L l match
+	inner loop; new buffer: AhJ
+	reverse comparison - read j -- comparing to J at ind 2
+	 J j match
+	inner loop; new buffer: Ah
+	reverse comparison - read Q -- comparing to h at ind 1
+AhQ  -- read q -- comparing to Q at ind 2
+	 Q q match
+	inner loop; new buffer: Ah
+	reverse comparison - read d -- comparing to h at ind 1
+Ahd  -- read w -- comparing to d at ind 2
+Ahdw  -- read W -- comparing to w at ind 3
+	 w W match
+	inner loop; new buffer: Ahd
+	reverse comparison - read D -- comparing to d at ind 2
+	 d D match
+	inner loop; new buffer: Ah
+	reverse comparison - read Z -- comparing to h at ind 1
+AhZ  -- read z -- comparing to Z at ind 2
+	 Z z match
+	inner loop; new buffer: Ah
+	reverse comparison - read H -- comparing to h at ind 1
+	 h H match
+	inner loop; new buffer: A
+	reverse comparison - read X -- comparing to A at ind 0
+AX  -- read x -- comparing to X at ind 1
+	 X x match
+	inner loop; new buffer: A
+	reverse comparison - read p -- comparing to A at ind 0
+Ap  -- read p -- comparing to p at ind 1
+App  -- read P -- comparing to p at ind 2
+	 p P match
+	inner loop; new buffer: Ap
+	reverse comparison - read T -- comparing to p at ind 1
+ApT  -- read w -- comparing to T at ind 2
+ApTw  -- read W -- comparing to w at ind 3
+	 w W match
+	inner loop; new buffer: ApT
+	reverse comparison - read C -- comparing to T at ind 2
+ApTC  -- read c -- comparing to C at ind 3
+	 C c match
+	inner loop; new buffer: ApT
+	reverse comparison - read Z -- comparing to T at ind 2
+ApTZ  -- read z -- comparing to Z at ind 3
+	 Z z match
+	inner loop; new buffer: ApT
+	reverse comparison - read D -- comparing to T at ind 2
+ApTD  -- read m -- comparing to D at ind 3
+ApTDm  -- read f -- comparing to m at ind 4
+ApTDmf  -- read F -- comparing to f at ind 5
+	 f F match
+	inner loop; new buffer: ApTDm
+	reverse comparison - read l -- comparing to m at ind 4
+ApTDml  -- read L -- comparing to l at ind 5
+	 l L match
+	inner loop; new buffer: ApTDm
+	reverse comparison - read P -- comparing to m at ind 4
+ApTDmP  -- read p -- comparing to P at ind 5
+	 P p match
+	inner loop; new buffer: ApTDm
+	reverse comparison - read d -- comparing to m at ind 4
+ApTDmd  -- read D -- comparing to d at ind 5
+	 d D match
+	inner loop; new buffer: ApTDm
+	reverse comparison - read S -- comparing to m at ind 4
+ApTDmS  -- read s -- comparing to S at ind 5
+	 S s match
+	inner loop; new buffer: ApTDm
+	reverse comparison - read g -- comparing to m at ind 4
+ApTDmg  -- read G -- comparing to g at ind 5
+	 g G match
+	inner loop; new buffer: ApTDm
+	reverse comparison - read t -- comparing to m at ind 4
+ApTDmt  -- read F -- comparing to t at ind 5
+ApTDmtF  -- read f -- comparing to F at ind 6
+	 F f match
+	inner loop; new buffer: ApTDmt
+	reverse comparison - read T -- comparing to t at ind 5
+	 t T match
+	inner loop; new buffer: ApTDm
+	reverse comparison - read E -- comparing to m at ind 4
+ApTDmE  -- read e -- comparing to E at ind 5
+	 E e match
+	inner loop; new buffer: ApTDm
+	reverse comparison - read T -- comparing to m at ind 4
+ApTDmT  -- read O -- comparing to T at ind 5
+ApTDmTO  -- read o -- comparing to O at ind 6
+	 O o match
+	inner loop; new buffer: ApTDmT
+	reverse comparison - read t -- comparing to T at ind 5
+	 T t match
+	inner loop; new buffer: ApTDm
+	reverse comparison - read y -- comparing to m at ind 4
+ApTDmy  -- read Y -- comparing to y at ind 5
+	 y Y match
+	inner loop; new buffer: ApTDm
+	reverse comparison - read M -- comparing to m at ind 4
+	 m M match
+	inner loop; new buffer: ApTD
+	reverse comparison - read O -- comparing to D at ind 3
+ApTDO  -- read G -- comparing to O at ind 4
+ApTDOG  -- read g -- comparing to G at ind 5
+	 G g match
+	inner loop; new buffer: ApTDO
+	reverse comparison - read k -- comparing to O at ind 4
+ApTDOk  -- read J -- comparing to k at ind 5
+ApTDOkJ  -- read j -- comparing to J at ind 6
+	 J j match
+	inner loop; new buffer: ApTDOk
+	reverse comparison - read K -- comparing to k at ind 5
+	 k K match
+	inner loop; new buffer: ApTDO
+	reverse comparison - read Z -- comparing to O at ind 4
+ApTDOZ  -- read U -- comparing to Z at ind 5
+ApTDOZU  -- read u -- comparing to U at ind 6
+	 U u match
+	inner loop; new buffer: ApTDOZ
+	reverse comparison - read Q -- comparing to Z at ind 5
+ApTDOZQ  -- read d -- comparing to Q at ind 6
+ApTDOZQd  -- read N -- comparing to d at ind 7
+ApTDOZQdN  -- read n -- comparing to N at ind 8
+	 N n match
+	inner loop; new buffer: ApTDOZQd
+	reverse comparison - read D -- comparing to d at ind 7
+	 d D match
+	inner loop; new buffer: ApTDOZQ
+	reverse comparison - read h -- comparing to Q at ind 6
+ApTDOZQh  -- read H -- comparing to h at ind 7
+	 h H match
+	inner loop; new buffer: ApTDOZQ
+	reverse comparison - read v -- comparing to Q at ind 6
+ApTDOZQv  -- read V -- comparing to v at ind 7
+	 v V match
+	inner loop; new buffer: ApTDOZQ
+	reverse comparison - read n -- comparing to Q at ind 6
+ApTDOZQn  -- read t -- comparing to n at ind 7
+ApTDOZQnt  -- read K -- comparing to t at ind 8
+ApTDOZQntK  -- read k -- comparing to K at ind 9
+	 K k match
+	inner loop; new buffer: ApTDOZQnt
+	reverse comparison - read T -- comparing to t at ind 8
+	 t T match
+	inner loop; new buffer: ApTDOZQn
+	reverse comparison - read N -- comparing to n at ind 7
+	 n N match
+	inner loop; new buffer: ApTDOZQ
+	reverse comparison - read q -- comparing to Q at ind 6
+	 Q q match
+	inner loop; new buffer: ApTDOZ
+	reverse comparison - read T -- comparing to Z at ind 5
+ApTDOZT  -- read j -- comparing to T at ind 6
+ApTDOZTj  -- read J -- comparing to j at ind 7
+	 j J match
+	inner loop; new buffer: ApTDOZT
+	reverse comparison - read e -- comparing to T at ind 6
+ApTDOZTe  -- read E -- comparing to e at ind 7
+	 e E match
+	inner loop; new buffer: ApTDOZT
+	reverse comparison - read V -- comparing to T at ind 6
+ApTDOZTV  -- read k -- comparing to V at ind 7
+ApTDOZTVk  -- read Z -- comparing to k at ind 8
+ApTDOZTVkZ  -- read z -- comparing to Z at ind 9
+	 Z z match
+	inner loop; new buffer: ApTDOZTVk
+	reverse comparison - read t -- comparing to k at ind 8
+ApTDOZTVkt  -- read t -- comparing to t at ind 9
+ApTDOZTVktt  -- read T -- comparing to t at ind 10
+	 t T match
+	inner loop; new buffer: ApTDOZTVkt
+	reverse comparison - read Y -- comparing to t at ind 9
+ApTDOZTVktY  -- read y -- comparing to Y at ind 10
+	 Y y match
+	inner loop; new buffer: ApTDOZTVkt
+	reverse comparison - read T -- comparing to t at ind 9
+	 t T match
+	inner loop; new buffer: ApTDOZTVk
+	reverse comparison - read D -- comparing to k at ind 8
+ApTDOZTVkD  -- read d -- comparing to D at ind 9
+	 D d match
+	inner loop; new buffer: ApTDOZTVk
+	reverse comparison - read I -- comparing to k at ind 8
+ApTDOZTVkI  -- read i -- comparing to I at ind 9
+	 I i match
+	inner loop; new buffer: ApTDOZTVk
+	reverse comparison - read R -- comparing to k at ind 8
+ApTDOZTVkR  -- read r -- comparing to R at ind 9
+	 R r match
+	inner loop; new buffer: ApTDOZTVk
+	reverse comparison - read q -- comparing to k at ind 8
+ApTDOZTVkq  -- read Q -- comparing to q at ind 9
+	 q Q match
+	inner loop; new buffer: ApTDOZTVk
+	reverse comparison - read y -- comparing to k at ind 8
+ApTDOZTVky  -- read Y -- comparing to y at ind 9
+	 y Y match
+	inner loop; new buffer: ApTDOZTVk
+	reverse comparison - read Y -- comparing to k at ind 8
+ApTDOZTVkY  -- read y -- comparing to Y at ind 9
+	 Y y match
+	inner loop; new buffer: ApTDOZTVk
+	reverse comparison - read x -- comparing to k at ind 8
+ApTDOZTVkx  -- read b -- comparing to x at ind 9
+ApTDOZTVkxb  -- read B -- comparing to b at ind 10
+	 b B match
+	inner loop; new buffer: ApTDOZTVkx
+	reverse comparison - read X -- comparing to x at ind 9
+	 x X match
+	inner loop; new buffer: ApTDOZTVk
+	reverse comparison - read L -- comparing to k at ind 8
+ApTDOZTVkL  -- read l -- comparing to L at ind 9
+	 L l match
+	inner loop; new buffer: ApTDOZTVk
+	reverse comparison - read K -- comparing to k at ind 8
+	 k K match
+	inner loop; new buffer: ApTDOZTV
+	reverse comparison - read H -- comparing to V at ind 7
+ApTDOZTVH  -- read h -- comparing to H at ind 8
+	 H h match
+	inner loop; new buffer: ApTDOZTV
+	reverse comparison - read v -- comparing to V at ind 7
+	 V v match
+	inner loop; new buffer: ApTDOZT
+	reverse comparison - read t -- comparing to T at ind 6
+	 T t match
+	inner loop; new buffer: ApTDOZ
+	reverse comparison - read Y -- comparing to Z at ind 5
+ApTDOZY  -- read y -- comparing to Y at ind 6
+	 Y y match
+	inner loop; new buffer: ApTDOZ
+	reverse comparison - read z -- comparing to Z at ind 5
+	 Z z match
+	inner loop; new buffer: ApTDO
+	reverse comparison - read o -- comparing to O at ind 4
+	 O o match
+	inner loop; new buffer: ApTD
+	reverse comparison - read K -- comparing to D at ind 3
+ApTDK  -- read M -- comparing to K at ind 4
+ApTDKM  -- read m -- comparing to M at ind 5
+	 M m match
+	inner loop; new buffer: ApTDK
+	reverse comparison - read i -- comparing to K at ind 4
+ApTDKi  -- read I -- comparing to i at ind 5
+	 i I match
+	inner loop; new buffer: ApTDK
+	reverse comparison - read k -- comparing to K at ind 4
+	 K k match
+	inner loop; new buffer: ApTD
+	reverse comparison - read a -- comparing to D at ind 3
+ApTDa  -- read A -- comparing to a at ind 4
+	 a A match
+	inner loop; new buffer: ApTD
+	reverse comparison - read U -- comparing to D at ind 3
+ApTDU  -- read v -- comparing to U at ind 4
+ApTDUv  -- read V -- comparing to v at ind 5
+	 v V match
+	inner loop; new buffer: ApTDU
+	reverse comparison - read u -- comparing to U at ind 4
+	 U u match
+	inner loop; new buffer: ApTD
+	reverse comparison - read v -- comparing to D at ind 3
+ApTDv  -- read E -- comparing to v at ind 4
+ApTDvE  -- read e -- comparing to E at ind 5
+	 E e match
+	inner loop; new buffer: ApTDv
+	reverse comparison - read j -- comparing to v at ind 4
+ApTDvj  -- read o -- comparing to j at ind 5
+ApTDvjo  -- read O -- comparing to o at ind 6
+	 o O match
+	inner loop; new buffer: ApTDvj
+	reverse comparison - read J -- comparing to j at ind 5
+	 j J match
+	inner loop; new buffer: ApTDv
+	reverse comparison - read U -- comparing to v at ind 4
+ApTDvU  -- read u -- comparing to U at ind 5
+	 U u match
+	inner loop; new buffer: ApTDv
+	reverse comparison - read Q -- comparing to v at ind 4
+ApTDvQ  -- read o -- comparing to Q at ind 5
+ApTDvQo  -- read O -- comparing to o at ind 6
+	 o O match
+	inner loop; new buffer: ApTDvQ
+	reverse comparison - read L -- comparing to Q at ind 5
+ApTDvQL  -- read l -- comparing to L at ind 6
+	 L l match
+	inner loop; new buffer: ApTDvQ
+	reverse comparison - read L -- comparing to Q at ind 5
+ApTDvQL  -- read l -- comparing to L at ind 6
+	 L l match
+	inner loop; new buffer: ApTDvQ
+	reverse comparison - read o -- comparing to Q at ind 5
+ApTDvQo  -- read O -- comparing to o at ind 6
+	 o O match
+	inner loop; new buffer: ApTDvQ
+	reverse comparison - read x -- comparing to Q at ind 5
+ApTDvQx  -- read o -- comparing to x at ind 6
+ApTDvQxo  -- read O -- comparing to o at ind 7
+	 o O match
+	inner loop; new buffer: ApTDvQx
+	reverse comparison - read X -- comparing to x at ind 6
+	 x X match
+	inner loop; new buffer: ApTDvQ
+	reverse comparison - read a -- comparing to Q at ind 5
+ApTDvQa  -- read A -- comparing to a at ind 6
+	 a A match
+	inner loop; new buffer: ApTDvQ
+	reverse comparison - read q -- comparing to Q at ind 5
+	 Q q match
+	inner loop; new buffer: ApTDv
+	reverse comparison - read Y -- comparing to v at ind 4
+ApTDvY  -- read Y -- comparing to Y at ind 5
+ApTDvYY  -- read X -- comparing to Y at ind 6
+ApTDvYYX  -- read x -- comparing to X at ind 7
+	 X x match
+	inner loop; new buffer: ApTDvYY
+	reverse comparison - read y -- comparing to Y at ind 6
+	 Y y match
+	inner loop; new buffer: ApTDvY
+	reverse comparison - read z -- comparing to Y at ind 5
+ApTDvYz  -- read M -- comparing to z at ind 6
+ApTDvYzM  -- read m -- comparing to M at ind 7
+	 M m match
+	inner loop; new buffer: ApTDvYz
+	reverse comparison - read Z -- comparing to z at ind 6
+	 z Z match
+	inner loop; new buffer: ApTDvY
+	reverse comparison - read y -- comparing to Y at ind 5
+	 Y y match
+	inner loop; new buffer: ApTDv
+	reverse comparison - read o -- comparing to v at ind 4
+ApTDvo  -- read O -- comparing to o at ind 5
+	 o O match
+	inner loop; new buffer: ApTDv
+	reverse comparison - read V -- comparing to v at ind 4
+	 v V match
+	inner loop; new buffer: ApTD
+	reverse comparison - read h -- comparing to D at ind 3
+ApTDh  -- read H -- comparing to h at ind 4
+	 h H match
+	inner loop; new buffer: ApTD
+	reverse comparison - read I -- comparing to D at ind 3
+ApTDI  -- read i -- comparing to I at ind 4
+	 I i match
+	inner loop; new buffer: ApTD
+	reverse comparison - read I -- comparing to D at ind 3
+ApTDI  -- read K -- comparing to I at ind 4
+ApTDIK  -- read f -- comparing to K at ind 5
+ApTDIKf  -- read F -- comparing to f at ind 6
+	 f F match
+	inner loop; new buffer: ApTDIK
+	reverse comparison - read k -- comparing to K at ind 5
+	 K k match
+	inner loop; new buffer: ApTDI
+	reverse comparison - read i -- comparing to I at ind 4
+	 I i match
+	inner loop; new buffer: ApTD
+	reverse comparison - read I -- comparing to D at ind 3
+ApTDI  -- read K -- comparing to I at ind 4
+ApTDIK  -- read A -- comparing to K at ind 5
+ApTDIKA  -- read a -- comparing to A at ind 6
+	 A a match
+	inner loop; new buffer: ApTDIK
+	reverse comparison - read U -- comparing to K at ind 5
+ApTDIKU  -- read u -- comparing to U at ind 6
+	 U u match
+	inner loop; new buffer: ApTDIK
+	reverse comparison - read k -- comparing to K at ind 5
+	 K k match
+	inner loop; new buffer: ApTDI
+	reverse comparison - read R -- comparing to I at ind 4
+ApTDIR  -- read r -- comparing to R at ind 5
+	 R r match
+	inner loop; new buffer: ApTDI
+	reverse comparison - read K -- comparing to I at ind 4
+ApTDIK  -- read Q -- comparing to K at ind 5
+ApTDIKQ  -- read q -- comparing to Q at ind 6
+	 Q q match
+	inner loop; new buffer: ApTDIK
+	reverse comparison - read A -- comparing to K at ind 5
+ApTDIKA  -- read S -- comparing to A at ind 6
+ApTDIKAS  -- read s -- comparing to S at ind 7
+	 S s match
+	inner loop; new buffer: ApTDIKA
+	reverse comparison - read a -- comparing to A at ind 6
+	 A a match
+	inner loop; new buffer: ApTDIK
+	reverse comparison - read k -- comparing to K at ind 5
+	 K k match
+	inner loop; new buffer: ApTDI
+	reverse comparison - read L -- comparing to I at ind 4
+ApTDIL  -- read g -- comparing to L at ind 5
+ApTDILg  -- read G -- comparing to g at ind 6
+	 g G match
+	inner loop; new buffer: ApTDIL
+	reverse comparison - read l -- comparing to L at ind 5
+	 L l match
+	inner loop; new buffer: ApTDI
+	reverse comparison - read G -- comparing to I at ind 4
+ApTDIG  -- read g -- comparing to G at ind 5
+	 G g match
+	inner loop; new buffer: ApTDI
+	reverse comparison - read L -- comparing to I at ind 4
+ApTDIL  -- read x -- comparing to L at ind 5
+ApTDILx  -- read X -- comparing to x at ind 6
+	 x X match
+	inner loop; new buffer: ApTDIL
+	reverse comparison - read h -- comparing to L at ind 5
+ApTDILh  -- read H -- comparing to h at ind 6
+	 h H match
+	inner loop; new buffer: ApTDIL
+	reverse comparison - read m -- comparing to L at ind 5
+ApTDILm  -- read c -- comparing to m at ind 6
+ApTDILmc  -- read C -- comparing to c at ind 7
+	 c C match
+	inner loop; new buffer: ApTDILm
+	reverse comparison - read z -- comparing to m at ind 6
+ApTDILmz  -- read Z -- comparing to z at ind 7
+	 z Z match
+	inner loop; new buffer: ApTDILm
+	reverse comparison - read x -- comparing to m at ind 6
+ApTDILmx  -- read X -- comparing to x at ind 7
+	 x X match
+	inner loop; new buffer: ApTDILm
+	reverse comparison - read M -- comparing to m at ind 6
+	 m M match
+	inner loop; new buffer: ApTDIL
+	reverse comparison - read W -- comparing to L at ind 5
+ApTDILW  -- read d -- comparing to W at ind 6
+ApTDILWd  -- read U -- comparing to d at ind 7
+ApTDILWdU  -- read u -- comparing to U at ind 8
+	 U u match
+	inner loop; new buffer: ApTDILWd
+	reverse comparison - read l -- comparing to d at ind 7
+ApTDILWdl  -- read L -- comparing to l at ind 8
+	 l L match
+	inner loop; new buffer: ApTDILWd
+	reverse comparison - read J -- comparing to d at ind 7
+ApTDILWdJ  -- read j -- comparing to J at ind 8
+	 J j match
+	inner loop; new buffer: ApTDILWd
+	reverse comparison - read D -- comparing to d at ind 7
+	 d D match
+	inner loop; new buffer: ApTDILW
+	reverse comparison - read w -- comparing to W at ind 6
+	 W w match
+	inner loop; new buffer: ApTDIL
+	reverse comparison - read n -- comparing to L at ind 5
+ApTDILn  -- read N -- comparing to n at ind 6
+	 n N match
+	inner loop; new buffer: ApTDIL
+	reverse comparison - read Y -- comparing to L at ind 5
+ApTDILY  -- read k -- comparing to Y at ind 6
+ApTDILYk  -- read K -- comparing to k at ind 7
+	 k K match
+	inner loop; new buffer: ApTDILY
+	reverse comparison - read F -- comparing to Y at ind 6
+ApTDILYF  -- read f -- comparing to F at ind 7
+	 F f match
+	inner loop; new buffer: ApTDILY
+	reverse comparison - read Z -- comparing to Y at ind 6
+ApTDILYZ  -- read z -- comparing to Z at ind 7
+	 Z z match
+	inner loop; new buffer: ApTDILY
+	reverse comparison - read p -- comparing to Y at ind 6
+ApTDILYp  -- read P -- comparing to p at ind 7
+	 p P match
+	inner loop; new buffer: ApTDILY
+	reverse comparison - read V -- comparing to Y at ind 6
+ApTDILYV  -- read u -- comparing to V at ind 7
+ApTDILYVu  -- read U -- comparing to u at ind 8
+	 u U match
+	inner loop; new buffer: ApTDILYV
+	reverse comparison - read v -- comparing to V at ind 7
+	 V v match
+	inner loop; new buffer: ApTDILY
+	reverse comparison - read H -- comparing to Y at ind 6
+ApTDILYH  -- read h -- comparing to H at ind 7
+	 H h match
+	inner loop; new buffer: ApTDILY
+	reverse comparison - read b -- comparing to Y at ind 6
+ApTDILYb  -- read Q -- comparing to b at ind 7
+ApTDILYbQ  -- read q -- comparing to Q at ind 8
+	 Q q match
+	inner loop; new buffer: ApTDILYb
+	reverse comparison - read I -- comparing to b at ind 7
+ApTDILYbI  -- read i -- comparing to I at ind 8
+	 I i match
+	inner loop; new buffer: ApTDILYb
+	reverse comparison - read L -- comparing to b at ind 7
+ApTDILYbL  -- read R -- comparing to L at ind 8
+ApTDILYbLR  -- read r -- comparing to R at ind 9
+	 R r match
+	inner loop; new buffer: ApTDILYbL
+	reverse comparison - read l -- comparing to L at ind 8
+	 L l match
+	inner loop; new buffer: ApTDILYb
+	reverse comparison - read E -- comparing to b at ind 7
+ApTDILYbE  -- read e -- comparing to E at ind 8
+	 E e match
+	inner loop; new buffer: ApTDILYb
+	reverse comparison - read V -- comparing to b at ind 7
+ApTDILYbV  -- read v -- comparing to V at ind 8
+	 V v match
+	inner loop; new buffer: ApTDILYb
+	reverse comparison - read B -- comparing to b at ind 7
+	 b B match
+	inner loop; new buffer: ApTDILY
+	reverse comparison - read Q -- comparing to Y at ind 6
+ApTDILYQ  -- read J -- comparing to Q at ind 7
+ApTDILYQJ  -- read j -- comparing to J at ind 8
+	 J j match
+	inner loop; new buffer: ApTDILYQ
+	reverse comparison - read l -- comparing to Q at ind 7
+ApTDILYQl  -- read L -- comparing to l at ind 8
+	 l L match
+	inner loop; new buffer: ApTDILYQ
+	reverse comparison - read G -- comparing to Q at ind 7
+ApTDILYQG  -- read g -- comparing to G at ind 8
+	 G g match
+	inner loop; new buffer: ApTDILYQ
+	reverse comparison - read j -- comparing to Q at ind 7
+ApTDILYQj  -- read Y -- comparing to j at ind 8
+ApTDILYQjY  -- read y -- comparing to Y at ind 9
+	 Y y match
+	inner loop; new buffer: ApTDILYQj
+	reverse comparison - read J -- comparing to j at ind 8
+	 j J match
+	inner loop; new buffer: ApTDILYQ
+	reverse comparison - read o -- comparing to Q at ind 7
+ApTDILYQo  -- read A -- comparing to o at ind 8
+ApTDILYQoA  -- read a -- comparing to A at ind 9
+	 A a match
+	inner loop; new buffer: ApTDILYQo
+	reverse comparison - read l -- comparing to o at ind 8
+ApTDILYQol  -- read x -- comparing to l at ind 9
+ApTDILYQolx  -- read X -- comparing to x at ind 10
+	 x X match
+	inner loop; new buffer: ApTDILYQol
+	reverse comparison - read u -- comparing to l at ind 9
+ApTDILYQolu  -- read U -- comparing to u at ind 10
+	 u U match
+	inner loop; new buffer: ApTDILYQol
+	reverse comparison - read q -- comparing to l at ind 9
+ApTDILYQolq  -- read g -- comparing to q at ind 10
+ApTDILYQolqg  -- read G -- comparing to g at ind 11
+	 g G match
+	inner loop; new buffer: ApTDILYQolq
+	reverse comparison - read Q -- comparing to q at ind 10
+	 q Q match
+	inner loop; new buffer: ApTDILYQol
+	reverse comparison - read L -- comparing to l at ind 9
+	 l L match
+	inner loop; new buffer: ApTDILYQo
+	reverse comparison - read Q -- comparing to o at ind 8
+ApTDILYQoQ  -- read q -- comparing to Q at ind 9
+	 Q q match
+	inner loop; new buffer: ApTDILYQo
+	reverse comparison - read O -- comparing to o at ind 8
+	 o O match
+	inner loop; new buffer: ApTDILYQ
+	reverse comparison - read q -- comparing to Q at ind 7
+	 Q q match
+	inner loop; new buffer: ApTDILY
+	reverse comparison - read N -- comparing to Y at ind 6
+ApTDILYN  -- read J -- comparing to N at ind 7
+ApTDILYNJ  -- read j -- comparing to J at ind 8
+	 J j match
+	inner loop; new buffer: ApTDILYN
+	reverse comparison - read z -- comparing to N at ind 7
+ApTDILYNz  -- read Z -- comparing to z at ind 8
+	 z Z match
+	inner loop; new buffer: ApTDILYN
+	reverse comparison - read n -- comparing to N at ind 7
+	 N n match
+	inner loop; new buffer: ApTDILY
+	reverse comparison - read y -- comparing to Y at ind 6
+	 Y y match
+	inner loop; new buffer: ApTDIL
+	reverse comparison - read O -- comparing to L at ind 5
+ApTDILO  -- read u -- comparing to O at ind 6
+ApTDILOu  -- read s -- comparing to u at ind 7
+ApTDILOus  -- read S -- comparing to s at ind 8
+	 s S match
+	inner loop; new buffer: ApTDILOu
+	reverse comparison - read U -- comparing to u at ind 7
+	 u U match
+	inner loop; new buffer: ApTDILO
+	reverse comparison - read e -- comparing to O at ind 6
+ApTDILOe  -- read E -- comparing to e at ind 7
+	 e E match
+	inner loop; new buffer: ApTDILO
+	reverse comparison - read F -- comparing to O at ind 6
+ApTDILOF  -- read f -- comparing to F at ind 7
+	 F f match
+	inner loop; new buffer: ApTDILO
+	reverse comparison - read o -- comparing to O at ind 6
+	 O o match
+	inner loop; new buffer: ApTDIL
+	reverse comparison - read d -- comparing to L at ind 5
+ApTDILd  -- read c -- comparing to d at ind 6
+ApTDILdc  -- read L -- comparing to c at ind 7
+ApTDILdcL  -- read u -- comparing to L at ind 8
+ApTDILdcLu  -- read U -- comparing to u at ind 9
+	 u U match
+	inner loop; new buffer: ApTDILdcL
+	reverse comparison - read l -- comparing to L at ind 8
+	 L l match
+	inner loop; new buffer: ApTDILdc
+	reverse comparison - read C -- comparing to c at ind 7
+	 c C match
+	inner loop; new buffer: ApTDILd
+	reverse comparison - read c -- comparing to d at ind 6
+ApTDILdc  -- read C -- comparing to c at ind 7
+	 c C match
+	inner loop; new buffer: ApTDILd
+	reverse comparison - read I -- comparing to d at ind 6
+ApTDILdI  -- read i -- comparing to I at ind 7
+	 I i match
+	inner loop; new buffer: ApTDILd
+	reverse comparison - read N -- comparing to d at ind 6
+ApTDILdN  -- read n -- comparing to N at ind 7
+	 N n match
+	inner loop; new buffer: ApTDILd
+	reverse comparison - read G -- comparing to d at ind 6
+ApTDILdG  -- read g -- comparing to G at ind 7
+	 G g match
+	inner loop; new buffer: ApTDILd
+	reverse comparison - read a -- comparing to d at ind 6
+ApTDILda  -- read A -- comparing to a at ind 7
+	 a A match
+	inner loop; new buffer: ApTDILd
+	reverse comparison - read D -- comparing to d at ind 6
+	 d D match
+	inner loop; new buffer: ApTDIL
+	reverse comparison - read V -- comparing to L at ind 5
+ApTDILV  -- read w -- comparing to V at ind 6
+ApTDILVw  -- read W -- comparing to w at ind 7
+	 w W match
+	inner loop; new buffer: ApTDILV
+	reverse comparison - read G -- comparing to V at ind 6
+ApTDILVG  -- read g -- comparing to G at ind 7
+	 G g match
+	inner loop; new buffer: ApTDILV
+	reverse comparison - read v -- comparing to V at ind 6
+	 V v match
+	inner loop; new buffer: ApTDIL
+	reverse comparison - read Z -- comparing to L at ind 5
+ApTDILZ  -- read t -- comparing to Z at ind 6
+ApTDILZt  -- read T -- comparing to t at ind 7
+	 t T match
+	inner loop; new buffer: ApTDILZ
+	reverse comparison - read e -- comparing to Z at ind 6
+ApTDILZe  -- read w -- comparing to e at ind 7
+ApTDILZew  -- read W -- comparing to w at ind 8
+	 w W match
+	inner loop; new buffer: ApTDILZe
+	reverse comparison - read E -- comparing to e at ind 7
+	 e E match
+	inner loop; new buffer: ApTDILZ
+	reverse comparison - read N -- comparing to Z at ind 6
+ApTDILZN  -- read n -- comparing to N at ind 7
+	 N n match
+	inner loop; new buffer: ApTDILZ
+	reverse comparison - read S -- comparing to Z at ind 6
+ApTDILZS  -- read s -- comparing to S at ind 7
+	 S s match
+	inner loop; new buffer: ApTDILZ
+	reverse comparison - read z -- comparing to Z at ind 6
+	 Z z match
+	inner loop; new buffer: ApTDIL
+	reverse comparison - read B -- comparing to L at ind 5
+ApTDILB  -- read K -- comparing to B at ind 6
+ApTDILBK  -- read k -- comparing to K at ind 7
+	 K k match
+	inner loop; new buffer: ApTDILB
+	reverse comparison - read D -- comparing to B at ind 6
+ApTDILBD  -- read d -- comparing to D at ind 7
+	 D d match
+	inner loop; new buffer: ApTDILB
+	reverse comparison - read e -- comparing to B at ind 6
+ApTDILBe  -- read E -- comparing to e at ind 7
+	 e E match
+	inner loop; new buffer: ApTDILB
+	reverse comparison - read Y -- comparing to B at ind 6
+ApTDILBY  -- read y -- comparing to Y at ind 7
+	 Y y match
+	inner loop; new buffer: ApTDILB
+	reverse comparison - read t -- comparing to B at ind 6
+ApTDILBt  -- read
+ -- comparing to t at ind 7
+eof
+polymer: ApTDILBt

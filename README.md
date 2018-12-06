@@ -111,3 +111,19 @@ I think I've gotten to that point in a relationship with a new language where yo
 ### Bonus -- Complete day 2 part 2
 
 Day 2 part 2, for the O(n!) solution I had, did not require that much time to implement. Maybe I was just trying to optimise too much that I scared myself into not solving it until I could conceive of the perfect solution (and we all know that perfect code does not exist). I went with a simple letter-double checking algorithm that could short-circuit as soon as the two package ids differed in letters at two different positions. It ran fairly fast (no benchmarking), even with print statements.
+
+## Day 5
+I'm not asleep at 12, so I open my advent challenge. This time, it's parsing! Or, something of the sort. Part 1 at least doesn't look that complicated, and I have two ideas of what I can do:
+a. iteratively:
+  1. have a base string/buffer to which we add chars
+  2. read in the input, 1 char at a time
+  3. if the difference in ascii code between the two chars are ['A' - 'a'] (off the top of my head that's 97 - 64? (edited to add: ~~yas~~ actually no; A = 67 and a = 97)) (absolute value that), do not append to the string AND remove last appended char
+  4. repeat step 3 with the last char in the buffer until we don't match
+  5. in case of a no-match, append the char and repeat
+b. recursively:
+  1. read in entire string
+  2. do passes on the string until we can't reduce it anymore
+
+Visibly, I have thought out the iterative process a lot more than the recursive one. (This problem just seems like it would do well in recursion, which is why I even mention it. However, after typing out my thoughts, I see that loops just might do the trick (in linear time probably too!).) Now to wrestle with python and getting the results I want...
+
+I ended up spending an hour on the problem. Sleep deprivation while trying to code is not good, as demonstrated by me trying to obtain a polymer of length 10 -- somehow, I had read that the resulting polymer would have 10 units and the question was asking for the string obtained. When I jumped onto the project again after being away from it for 17 hours, I still had that belief until I went and re-read the question. My first answer was too high. A nagging feeling told me that I was probably off by one. Sure enough, I waited out the 60 seconds (ready to restart the problem if needed), submitted the length I obtained - 1, and unlocked part 2.
