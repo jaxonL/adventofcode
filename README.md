@@ -167,3 +167,15 @@ Very quickly, I list a todo list for the sleigh-assembly-instruction-order-deter
 2. Store the order as we parse.
 
 I have decided to put a rain check on day 6 (and possibly day 7, due to events) and will come back another time to unwrap my advent stars.
+<!-- Day 7: trees and linked lists may have helped but... -->
+
+## Day 8
+
+Day 8's hard part, before I even start to attack the question, is to parse the input and to construct the tree. Part 1 doesn't seem so hard; we could technically not even create a tree (which may or may not be used in part 2) and solve the summing of metadata. I suspect it to be very easy to mess up the parsing and then getting the wrong sum though. An outline for the algorithm:
+
+1. Read in two integers, `childrenCount` and `metadataCount` respectively (if there is no data to read (finished parsing the last node), go to step 4)
+2. Push `childrenCount` into `childrenStack` and `metadataCount` `metadataStack`
+3. If `childrenCount` > 0, repeat steps 1-2
+4. (Previously parsed `childrenCount` is 0) Pop an element from each of the two stacks and save them in the respective count variables
+5. Read in `metadataCount` integers from the file and sum them
+6. Pop an element from `childrenStack` and subtract 1 from it. If the result is 0, repeat steps 4-5; else, push it back into the stack and go to step 1.
