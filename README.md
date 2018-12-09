@@ -148,3 +148,22 @@ The polymer reacting condition reminds me of that one coding question where you 
 Continuing on with the stack idea, we can find the character we want to remove by going through the string and "counterising" every 'possible removal' per character removed (case not-withstanding). (Also note that it didn't matter whether we removed the characters first then reduced or reduced then removed, so, for time's sake, I work with the already reduced version.) Enter my O(n^2) `getFoldOccurences` that estimate the number of reactions (which I call fold) that occur when a character is removed. Once that was found, we just needed to remove the character that invoked the most folds and pass the result through our polymer reduction algorithm again. (I had to output stuff into another file and then read the code from there; a lazy layman's way to approach the issue at hand. Forgive the countless `print`s scattered throughout the code.)
 
 I checked by reddit to browse some answers before the next problem. There is one person who [solved the problem in Vim](https://www.reddit.com/r/adventofcode/comments/a3912m/2018_day_5_solutions/eb4iki6)! The next two comments on the solutions megathread are all in python (very little code too :')) (see [here](https://www.reddit.com/r/adventofcode/comments/a3912m/2018_day_5_solutions/eb4cvto) and [here](https://www.reddit.com/r/adventofcode/comments/a3912m/2018_day_5_solutions/eb4ff0j)). I don't completely understand how these snippets do what they do (I think I see a semblance of switch in there somewhere), so I'll be off doing some research before peaking at day 6.
+
+## Day 6 and Day 7 (Chronal Coordinates and The Sum of Its Parts)
+
+Going from the year 1518 to a new one apparently means new terms ([Manhatten distance/Taxicab geometry what?](https://en.wikipedia.org/wiki/Taxicab_geometry)) and (subjectively) harder problems. It's another visual/spatial enigma involving coordinates, so the first data structure to cross my mind is a 2D array. But this time, it's not that simple (self-imposed time constraints on my end as well because I was out 'til now). Luckily for me, I had a refresher on my data structure course on day 3 and day 4 when I considered using a range tree or a compressed trie respectively. As we are dealing with 2D points, a tree used to represent a range of them is certainly a plausible solution. For reference, [this](https://www.student.cs.uwaterloo.ca/~cs240/s18/modules/module08.pdf) is the document I'm skimming through for my refresher. I decide to separate part 1 into 3 parts:
+
+1. determining the coordinates that have a finite "territory"
+2. finding the area of said territory
+3. getting the max of possible territory areas
+
+I can easily find a bounding box in O(n) for my coordinates, and from there determine that any point that has a coordinate on the bounding box has an infinite area of closest points. I deduced that in order for a point to have a finite area, it needs to be bounded by the perpendicular lines of the medians between said point and at least 3 others (to form some kind of triangular boundary).
+
+While I am still gauging out day 6, day 7 became available. And wow, it definitely looks easier than day 6 so...
+
+Very quickly, I list a todo list for the sleigh-assembly-instruction-order-determining algorithm:
+
+1. Parse out the 2nd (2) and 8th (8) token (2 must be done before 8)
+2. Store the order as we parse.
+
+I have decided to put a rain check on day 6 (and possibly day 7, due to events) and will come back another time to unwrap my advent stars.
