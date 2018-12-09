@@ -169,7 +169,7 @@ Very quickly, I list a todo list for the sleigh-assembly-instruction-order-deter
 I have decided to put a rain check on day 6 (and possibly day 7, due to events) and will come back another time to unwrap my advent stars.
 <!-- Day 7: trees and linked lists may have helped but... -->
 
-## Day 8
+## Day 8 (Memory Maneuver)
 
 Day 8's hard part, before I even start to attack the question, is to parse the input and to construct the tree. Part 1 doesn't seem so hard; we could technically not even create a tree (which may or may not be used in part 2) and solve the summing of metadata. I suspect it to be very easy to mess up the parsing and then getting the wrong sum though. An outline for the algorithm:
 
@@ -178,3 +178,21 @@ Day 8's hard part, before I even start to attack the question, is to parse the i
 3. (Previously parsed `childrenCount` is 0) Read in `metadataCount` integers from the file and sum them
 4. Pop an element from `childrenStack` and subtract 1 from it.
 5. If the resulting count is 0, repeat steps 3-4; else, push it back into the stack and go to step 1.
+
+Good thing (not usually, but for my uses) python passes parameters by reference.
+
+What's not a good thing is that my wanting to be lazy with part 1 comes back to bite me in part 2.
+
+I mean, building a tree for a problem concerning a tree is probably the way to go, especially if the whole concept is related to trees and nodes. /s
+
+A possible way to do it is to build a tree out of the input, save a "node value" property in the node, and get the node value of the first node. (Note that it's already past midnight, and day 9 is up by now.)
+
+Important stuff for part 2:
+
+* I need to keep track of the values of immediate children nodes and the order (`x`th child)
+* a node with 0 children's value is the sum of its metadata
+* the metadata refers to the indices of the node's children whose values we want to consider. If that child node is mentioned twice, its value is counted for twice
+
+Recursion is also a good friend, especially when it comes to trees. The recursive solution for part 2 seemed a lot more cleaner than the linear/iterative approach in part 1.
+
+<!-- ## Day 9 (Marble Mania) -->
