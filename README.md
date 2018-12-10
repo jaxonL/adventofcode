@@ -195,4 +195,26 @@ Important stuff for part 2:
 
 Recursion is also a good friend, especially when it comes to trees. The recursive solution for part 2 seemed a lot more cleaner than the linear/iterative approach in part 1.
 
-<!-- ## Day 9 (Marble Mania) -->
+## Day 9 (Marble Mania)
+
+How do I even start? Let's list down what we know:
+
+* the number of points the last marble is worth indicates how many marbles are placed (eg: if the last marble is worth 25 points, then the elves are playing with 26 marbles (including marble #0), but only placing 25 (because the 0th marble is placed in the centre))
+  * this is also the number of turns the game takes
+* every marble that has a value that is dividable ([divisible](https://english.stackexchange.com/questions/85111/when-to-use-divisible-vs-dividable)? Had to google this to make sure the usage was right.) by 23 is not placed in the circle; instead, it is added to the points earned by the elf playing that turn
+* at the same time as the above, the marble that is 7 marbles ccw of the current marble is removed; its points added to the same elf; and the marble immediately after it becomes the current marble in play ( <- hard part right here)
+
+Based on this, letting `x` be their position of play (the first player is numbered `1`) and `y` be the total number of players, we can determine an elf's score to be the sum of the values of the following:
+1. all the marbles with a value of a multiple of 23 the elf was supposed to play and
+2. the marbles that were 7 marbles ccw of the 'current marble' during that turn
+
+1 can be calculated as such:
+* the first player to get that marble is the one that plays on turn 23. Thus, `23 % y` gives the position of the player who earns the 1st 23 + 9 \[according to the example\] points (if the result of the modulo = 0, then the `y`th elf to play gets the marble).
+* the second player to not play a marble is the one who plays marble 46, so `46 % y`th player
+* the third one would then be `(3 * 23) % y`, and so on
+
+Thus, `x = (n * 23) % y` with `n` in { 1, 2, 3, ..., `floor(total num of marbles / 23)`}.
+
+2 is the harder part. Would I have to keep track of everything in order to calculate a high score? I then remembered something I read about yesterday, when looking into deques and how they were double-ended. Deques in python had a rotate function. The marbles in our game were placed in a circle. I can leverage the clockwise and counter-clockwise insertions by just rotating a deque n times, and appending to the end/beginning of it. That way, I didn't need to keep track of the index of my 'current marble' -- it would always be the last (or the first, depending on how I implement it) element in the deque. Data structures to the rescue! For inserts, I decide to rotate my deque by 1 index counter-clockwise (to the left, so by -1), then append my next marble to the end of it. For each 23rd marble, I would have to save the value to the numbered elf player, rotate to the right (clockwise) 7 times, pop the last element and add that to the score, then rotate cw another time to set the 'current marble' to the marble immediately clockwise of the popped marble. I could also just rotate cw 6 times and remove the second to last element, but I didn't find an integrated function to do so (or just not enough research), so I'll stick to the former solution.
+
+Part 2 involved me passing in a value 100 times larger. Performance did take a hit (maybe a few seconds), but I got the right answer. I'm now on my way to browse reddit for day 9 solutions (leaving day 6 and day 7 in my back log for now).
