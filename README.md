@@ -169,6 +169,20 @@ Very quickly, I list a todo list for the sleigh-assembly-instruction-order-deter
 I have decided to put a rain check on day 6 (and possibly day 7, due to events) and will come back another time to unwrap my advent stars.
 <!-- Day 7: trees and linked lists may have helped but... -->
 
+I'm back (on day 10, because well... graphic stuff is confusing). I'm thinking about other ways to solve it (because the sleigh code wasn't working; wasn't considering edge cases, etc.). I have to keep track of what comes after (or before) a character in case I need to move it around a string. Enter an inelegant solution:
+
+For each character...
+* ... keep track of the letters that come before the character
+* ... keep track of how many (quantity) letters come after the character (counter 'x')
+
+We can then build the string up *backwards*:
+
+1. find the characters that have 0 as their value for 'x'
+2. order them in alphabetical order then append in front of the instruction string
+3. subtract 1 from the `x` values of all the letters that come before all the appended character(s)
+5. remove the character(s) from the set
+4. repeat until no characters are left
+
 ## Day 8 (Memory Maneuver)
 
 Day 8's hard part, before I even start to attack the question, is to parse the input and to construct the tree. Part 1 doesn't seem so hard; we could technically not even create a tree (which may or may not be used in part 2) and solve the summing of metadata. I suspect it to be very easy to mess up the parsing and then getting the wrong sum though. An outline for the algorithm:
