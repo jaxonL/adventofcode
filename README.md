@@ -218,3 +218,14 @@ Thus, `x = (n * 23) % y` with `n` in { 1, 2, 3, ..., `floor(total num of marbles
 2 is the harder part. Would I have to keep track of everything in order to calculate a high score? I then remembered something I read about yesterday, when looking into deques and how they were double-ended. Deques in python had a rotate function. The marbles in our game were placed in a circle. I can leverage the clockwise and counter-clockwise insertions by just rotating a deque n times, and appending to the end/beginning of it. That way, I didn't need to keep track of the index of my 'current marble' -- it would always be the last (or the first, depending on how I implement it) element in the deque. Data structures to the rescue! For inserts, I decide to rotate my deque by 1 index counter-clockwise (to the left, so by -1), then append my next marble to the end of it. For each 23rd marble, I would have to save the value to the numbered elf player, rotate to the right (clockwise) 7 times, pop the last element and add that to the score, then rotate cw another time to set the 'current marble' to the marble immediately clockwise of the popped marble. I could also just rotate cw 6 times and remove the second to last element, but I didn't find an integrated function to do so (or just not enough research), so I'll stick to the former solution.
 
 Part 2 involved me passing in a value 100 times larger. Performance did take a hit (maybe a few seconds), but I got the right answer. I'm now on my way to browse reddit for day 9 solutions (leaving day 6 and day 7 in my back log for now).
+
+## Day 10
+
+Flabbergasted. Dumbfounded. Unsure how to solve this. My weaknesses are graphical problems, I suppose. Part 1 asks for the message that the stars will spell out, after a certain amount (`x`) of seconds have elapsed. The problem here is to determine *when* (what `x` is) our stars are aligned, then to parse out the message that is given.
+
+A greedy approach is to visually place every point and its trajectory onto a graph and, second-by-second, move it until we reach a message. This involves iterating over all `n` points for `x` times -- as `x` is fixed, the overall solution would take `O(n)` time. Space-wise however it depends on the max distance between all the points at the beginning (because they should be moving at least towards each other).
+
+Brainstorming points:
+* given the x-y coordinates and the velocity of a star, we can trace a line
+* all points should be moving towards a same direction (around the area where the message should finally appear)
+* assuming that letters are formed by continuous lines, at time `x`, all stars should be adjacent to at least one other star
