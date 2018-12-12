@@ -243,3 +243,49 @@ Brainstorming points:
 * given the x-y coordinates and the velocity of a star, we can trace a line
 * all points should be moving towards a same direction (around the area where the message should finally appear)
 * assuming that letters are formed by continuous lines, at time `x`, all stars should be adjacent to at least one other star
+
+## Day 11 (Chronal Charge)
+
+I'm sure there's a way to plot these variations and to maximise it, if calculus has taught me anything. Trying to wrap my mind around the problem, I can get these equations (with `C` as the serial input):
+
+* `rackId` = `x` + 10 (there are 300 of these, ranging from 11 to 310)
+* `initialPowerLvl` = `y` * `rackId` = `y` * (`x` + 10) = `xy` + 10`y`
+* `increasedPowerLvl` = `initialPowerLvl` + `C` = `xy` + 10`y` + `C`
+* `setPowerLvl` = `increasedPowerLvl` * `rackId` = (`xy` + 10`y` + `C`)(`x` + 10) = `xxy` + 10`xy` + `Cx` + 10`xy` + 100`y` + 10`C` = `xxy` + 20`xy` + `Cx` + 100`y` + 10`C`
+* `finalPowerLvl` = getTensDigit(`setPowerLvl`) - 5 = getTensDigit(`xxy` + 20`xy` + `Cx` + 100`y` + 10`C`) - 5
+
+Getting the tens' digit of a sum is ignoring everything before the tens' unit, summing the digits in the tens' unit % 10, then summing all the digits in the ones' units and only keeping the tens' digit of that. This comes down to modulo-ing `setPowerLvl` by 100, summing it up, then (computer) dividing by 10.
+
+As the only possible tens' digits are { 0, 1, 2, ..., 8, 9 }, the `finalPowerLvl` must be an element of { -5, -4, -3, ..., 4, 5 }. My serial number is `3463`. Thus:
+
+> `xxy` + 20`xy` + 3463`x` + 100`y` + 34630
+
+A few handy modular arithmetic rules:
+i. `a`^2 mod `m` = (`a` mod `m`)^2 mod `m`
+ii. `bc` mod `m` = ((`b` mod `m`)(`c` mod `m`)) mod `m`
+iii. `d` + `f` mod `m` = `d` mod `m` + `f` mod `m`
+We can ignore anything equal or greater than 100, as well as numbers ending with a 0 in the units (won't affect summation of units), so 100`y` is reduced to 0 and the tens' digit can be calculated by
+
+> (`xxy` % 100) + (20 * (`xy` % 10)) % 100 + (63 * (`x` % 100)) % 100 (by simplifying to less than 100s to sum)
+> ((`x`^2 * `y`) % 100) + (20 * (`x` % 10 * `y` % 10)) % 100 + (63 * (`x` % 100)) % 100 (using ii.)
+> ((`x`^2 % 100) * (`y` % 100)) % 100 + ((20 * (`x` % 10 * `y` % 10)) % 100) + (63 * (`x` % 100)) % 100 (using ii.)
+> ((`x` % 100) * (`x` % 100) * (`y` % 100) % 100) + (20 * (`x` % 10 * `y` % 10)) % 100 + (63 * (`x` % 100)) % 100 (using i.)
+
+And then adding 3 and the units of 2`xy` after getting the tens' digit.
+
+Let `X` = (`x` % 100) and `Y` = (`y` % 100); `a` = (`x` % 10), `b` = (`y` % 10). We get:
+
+> (`X` * `X` * `Y`) % 100 + (63 * `X`) % 100 + (2 * `a` * `b`) % 10 + 3
+> (`X` * `X` * `Y` * 63 * `X`) % 100 + (2 * `a` * `b` + 3) % 10 + 3
+
+That gets a number under 100 that we can (computer) divide by 10 to get the tens' unit.
+
+We then have to find the largest power value sums within a 3 x 3 square. This means:
+
+We have `x`, `x` + 1, and `x` + 2; `y`, `y` + 1, and `y` + 2.
+
+((Too much math; I may have messed up the top part too. I tried to attempt it in excel.))
+
+![Zoomed out table of battery values](https://github.com/jaxonL/adventofcode/raw/master/days/11/batteryGraph.png)
+
+![Full screen-ish table of battery values](https://github.com/jaxonL/adventofcode/raw/master/days/11/batteryGraph2.png)
