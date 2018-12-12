@@ -289,3 +289,5 @@ We have `x`, `x` + 1, and `x` + 2; `y`, `y` + 1, and `y` + 2.
 ![Zoomed out table of battery values](https://github.com/jaxonL/adventofcode/raw/master/days/11/batteryGraph.png)
 
 ![Full screen-ish table of battery values](https://github.com/jaxonL/adventofcode/raw/master/days/11/batteryGraph2.png)
+
+You can see a repeating pattern; these don't quite look right, but at least they look pretty.
