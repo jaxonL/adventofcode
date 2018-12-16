@@ -291,3 +291,28 @@ We have `x`, `x` + 1, and `x` + 2; `y`, `y` + 1, and `y` + 2.
 ![Full screen-ish table of battery values](https://github.com/jaxonL/adventofcode/raw/master/days/11/batteryGraph2.png)
 
 You can see a repeating pattern; these don't quite look right, but at least they look pretty.
+
+## Day 12 (Subterranean Sustainability)
+
+After 3 days of no-solves, this challenge looks do-able? I think I may be trying too hard to get an optimal solution before I even get a solution orz.
+
+As the usual, here are the important points:
+* There are infinite pots to my left and my right
+* we want the number of plants that have grown in pots after 20 generations (so sum of all plants that are alive in a generation, for 20 generations)
+* the patterns that don't result in a plant at the centre position doesn't matter (?)
+* when determining whether a plant will be there in the next generation, always consider two plants to its left and right. This means that the length of the string to parse may increase as the generations go on. Edge cases are the following: the first two pots in the string and the last two pots in the string
+* Edited to add: I misread! We require the sum of the indices at which the plants are. We would then of course need to keep track of the index 0.
+
+When considering what kind of data structure to use to simulate the plants, I opt for the ever-so-reliable list because of it's O(1) index accessing (that's what we'll be using most in my opinion). The downside is, unless I mark the 'starting element' as position 0, I will lose the index of the plant in front of me. As for the patterns, we can filter out those that don't resolve in a plant (it's either there will be a plant or there will not be a plant in the next generation, so if it doesn't follow the pattern, then there will be no plant). (It would also be extremely troll if we had the pattern `.... => #`; just sayin'.) We can then store all patterns in a dictionary where the key would be the 3 last characters of the pattern. This key points to a second dictionary of possible 2 character prefixes that yield a plant at the current position.
+
+Ended up adding an offset counter to keep track of how much to the left I am extending the string. Despite passing the test case, I can't seem to get the right answer. My answer is too high. I doubt it has to do with the offset counter (should be a constant of -40 for 20 generations), so it means I messed up during generating the 20th element.
+
+Found my error... As python is very dependent on its indents, I found that in my parsing I indented too little. At work, I'm used to 2 space indents, but somehow Atom forced everything to 4 spaces, so I tried to fix it, but gave up afterwards and tried to reset everything to 4 spaces. I missed that part...
+
+## Day 14 (Chocolate Charts)
+
+Hot chocolate recipe scores are a fun premise for algorithmic calculations. I tackled this one on the metro (busy week, busier weekends): by breaking down how to calculate the indices and then the values, the first part becomes a simple while loop. The only thing to look out for was adding the digits of the result (which could not go over 18, as the max score of a recipe was 9) one at a time to the resulting list. Part 2 took a bit more thinking; we could go with a forward-scanning match algorithm as we build the list, but that would involve re-evaluating the match in case we have repeating digits in our given input. Another possible implementation is the bad character heuristic, where we scan backwards, then shift when a mismatch is given, however that involves knowing the entire resulting string beforehand (all recipe values). I didn't want to build up the list of recipe scores by increments of 100, then searching, so no implementing the Boyer-Moore algorithm here. I settled instead for a simple backward-scanning search, as by the time we reach the last index, we can see if the previous indices match our give pattern, and if yes, we only have to subtract the length of the target string from the list length to get the number of recipes required by the elves before reaching the target score sequence.
+
+Unsure why my second part got me a memory error, as shown below. Maybe I never reach the combination of recipe scores? I even looked through the solutions and tried with their line of code (which led to the error).
+
+![Part 2 memory error](https://github.com/jaxonL/adventofcode/raw/master/days/14/part2_memErr.png)
