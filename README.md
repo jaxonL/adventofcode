@@ -316,3 +316,5 @@ Hot chocolate recipe scores are a fun premise for algorithmic calculations. I ta
 Unsure why my second part got me a memory error, as shown below. Maybe I never reach the combination of recipe scores? I even looked through the solutions and tried with their line of code (which led to the error).
 
 ![Part 2 memory error](https://github.com/jaxonL/adventofcode/raw/master/days/14/part2_memErr.png)
+
+December 17 edit: so. A kind soul pointed out my erroneous way of thinking. Indeed, we may be adding not one, but two values at a time to the recipe scores. Therefore, I would have to get a match not only from the last character, but also from the second to last character in the case that we add scores > 9 to the list.
