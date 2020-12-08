@@ -26,7 +26,7 @@ First step: draw examples out. For `n = 1`, we have a simple `[ [1] ]` answer. `
 
 ### Scratchpad notes
 
-![scratchpad for leetcode day 7](7/notes.jpg)
+<img src="7/notes.jpg" alt="scratchpad for leetcode day 7" height="500"/>
 
 The above shows remnants of my process of how I came to [my solution](7/SpiralMatrix.py).
 
