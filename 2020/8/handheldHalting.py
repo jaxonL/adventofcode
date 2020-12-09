@@ -51,6 +51,7 @@ def changeInstructionAndGetFinalAcc(ops):
     #       save index that was changed
     acc = 0
     visited = [0] * len(ops)
+    triedChanging = set()
     viewingQueue = []
     i = 0
     changedIndex = None
@@ -64,21 +65,22 @@ def changeInstructionAndGetFinalAcc(ops):
             # do some things
             prevOp, prevVal = ops[prevIndex]
             # print(prevOp, prevVal)
-            while prevOp == 'acc' or (prevOp == 'nop' and prevVal == 0) or (prevIndex == changedIndex):
+            while prevOp == 'acc' or (prevOp == 'nop' and prevVal == 0) or prevIndex in triedChanging:
                 # print('\n\tremoving instruction', prevIndex, ' - ', prevOp, prevVal, end=';')
                 if prevIndex == changedIndex:
                     # change it back
                     ops[changedIndex] = originalOpVal
                     changedIndex = None
                     originalOpVal = None
-                else:
+                elif prevOp == 'acc':
                     # remove acc addition
                     acc -= prevVal
                 # print(' new acc', acc)
                 visited[prevIndex] = 0
                 prevIndex = viewingQueue.pop()
                 prevOp, prevVal = ops[prevIndex]
-
+            # attempt to change
+            triedChanging.add(prevIndex)
             if prevOp == 'nop':
                 # change to jmp
                 changedIndex = prevIndex
@@ -102,9 +104,9 @@ def changeInstructionAndGetFinalAcc(ops):
             viewingQueue.append(i)
             i, acc = OP_DICT.get(op)(i, acc, val)
             # print('acc is', acc)
-        # print('\t viewingQueue:', viewingQueue)
+        # print('\t viewingQueue:', viewingQueue, '; tried changing:', triedChanging)
 
-    # print('changed instr at index', changedIndex, ops[changedIndex])
+    print('changed instr at index', changedIndex, ops[changedIndex])
     return acc
 
 def dayEight():
