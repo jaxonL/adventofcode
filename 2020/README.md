@@ -31,3 +31,11 @@ First step: draw examples out. For `n = 1`, we have a simple `[ [1] ]` answer. `
 The above shows remnants of my process of how I came to [my solution](7/SpiralMatrix.py).
 
 I discussed it with a peer, and their initial sketch was to populate a grid, and to change directions once we "hit a wall" (boundaries of the `n` x `n` grid, or an already populated square). Their approach would have definitely been more straightforward to implement. I believe that the runtimes remained the same though, seeing as both solutions should be in `O(n^2)` (recursion generates the first and last rows of `n` numbers, plus the `n - 2` grid (so `(n - 2)^2`) inside, which ultimately still comes to `n^2` numbers).
+
+## Day 8: Handheld Halting
+
+I'm too tired to write up a report. I thought we needed to determine whether a loop existed, so I first was thinking about how to find that out with two pointers incremented at different paces. I then read the question again, and realised that we only needed to keep track of the instructions we've visited and the current accumulator amount. The first part wasn't that hard to get (the hard part was brushing up on Python switch hacks and remembering how to parse input in a useable format).
+
+The second part, I feel like I'm missing a huge chunk of the optimal solution. I was thinking of using backtracking, but my answer (2296) is not correct (too high). I had to create two new structures, a queue of previous steps to get to the current instruction, as well as a set of changed instructions (I had forgotten this and my code went into infinite loop mode). The logic behind the set of changed instructions was that if we had changed it before and realised that it didn't work, even in future backtracking iterations, we need to disregard the changed instruction because it won't work (brain is a mush -- I hope the explanation can be easily understood despite my not knowing words at this hour).
+
+There were other errors I made along the way: not adding numbers to the viewed instructions queue, not saving the previously changed instruction (and rechanging it on a backtracking run, which led to infinite loops), adding the wrong index to previously viewed instructions, etc.
