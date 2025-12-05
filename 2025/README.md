@@ -48,3 +48,5 @@ Maybe part 2 I brute force instead...
 
 ## Day 3: Lobby (Dec 4)
 
+Going to do just the first part for these questions. Day 4 seems like a graph question.
+

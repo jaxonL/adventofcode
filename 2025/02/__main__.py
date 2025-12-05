@@ -4,7 +4,6 @@ import os
 import math
 
 curr_dir = pathlib.Path(__file__).parent.resolve()
-print(curr_dir)
 
 def parse_range(range):
   """
