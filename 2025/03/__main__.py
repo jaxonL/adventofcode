@@ -1,7 +1,5 @@
 import pathlib
-import csv
 import os
-import math
 
 curr_dir = pathlib.Path(__file__).parent.resolve()
 
@@ -37,7 +35,7 @@ def get_joltage_sum():
   return joltage
 
 def get_largest_joltage_p2(joltage_str):
-  
+  return 0
 
 def get_joltage_sum_p2():
   joltage = 0
