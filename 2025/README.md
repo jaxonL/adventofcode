@@ -50,3 +50,20 @@ Maybe part 2 I brute force instead...
 
 Going to do just the first part for these questions. Day 4 seems like a graph question.
 
+## Day 4: Printing Department (Dec 5)
+
+First part I was able to brute force. Need to think of a more optimal solution. Second part looks for sure tho like a graph question (BFS)? I'll likely need a queue to add nodes to check to.
+
+### Second part logic ruminations
+Let's say we start at (0, 0). Steps to take:
+- if current node is a `.`
+    - add all adjacent nodes that are not "seen" to the queue
+    - mark self as seen (`*`)
+- if current node is a `@`
+    - add all adjacent nodes that are not "seen" to the queue
+    - check adjacent nodes to see if we can remove.
+    - if the roll can be removed, mark it as `*`
+    - else, keep the `@` and continue
+- if current node is `*`, continue
+
+(or just run the algorithm for p1 again and again until there has been no rolls removed)
