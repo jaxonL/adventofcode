@@ -1,5 +1,4 @@
 import pathlib
-import os
 from helpers.read_file import read_to_list
 
 curr_dir = pathlib.Path(__file__).parent.resolve()

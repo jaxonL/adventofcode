@@ -67,3 +67,37 @@ Let's say we start at (0, 0). Steps to take:
 - if current node is `*`, continue
 
 (or just run the algorithm for p1 again and again until there has been no rolls removed)
+
+## Day 5: Cafeteria (Dec 5)
+
+### Reqs
+
+Input parsing:
+- fresh ingredient ID range (`d-d\n`).
+    - ranges are inclusive.
+    - ranges may overlap
+- blank line (`\n \n`)
+- available ingredient IDs (`\n`)
+
+Logic:
+- merge ranges together to form distinct ranges
+  - sort by lowest boundary first
+- iterate through available ingredient IDs and check if it's in a range
+
+Response:
+- number of fresh ingredients
+
+### Coding
+Ran into a bit of an issue in the initial submission for checking ingredient freshness -- I was doing an outer loop with each ingredient, and then incrementing the window if the ingredient did not fit in the window, except I forgot to check if the ingredient fit in the new window. The example file ran properly, but the actual input did not. Ended up rubber-ducking with AI to check what I could've missed. After 2-3 prompts (Perplexity kept showing me "gotchas" that weren't actually the issue), we were able to pinpoint the issue of skipping the check. Instead of continuing with the ingredient list as an outer loop, I swapped to using the windows as an outer loop -- change windows only when ingredient is actually not part of it, otherwise increment ingredient until exhausted.
+
+Part 2 was a lot easier since I had deduped the initial ranges for part 1 -- simple math to resolve the questions.
+
+Complexity analysis... I think it falls under `O(n + m)` where `n` is the number of ID ranges and `m` the number of ingredients?
+
+Breakdown:
+- parsing the file: read `n` + `m` lines => `O(n + m)`
+- deduping the ranges: go through each range once => `O(n)`
+- checking the ingredients: `O((min(n, m)))`, since we break out of the loop as soon as one list is exhausted, and it's at most `O(n + m)`
+
+Adding that together it's `O(n + m)` right?
+
