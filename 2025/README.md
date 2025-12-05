@@ -25,3 +25,26 @@ Seems simple enough, good to use as a re-introduction to Python. Time to stop ya
 Ended up doing a bit of chore work (setting up a Makefile, looking into how Python uses modules) and spending time on confirming how to import files from the right paths. I'm sure there's a more elegant math solution for part 2 but... we're trying to catch up, so let's leave it at that.
 
 Note to future self: since the `helpers` folder can be re-used, it's located as a sibling folder to the yearly advent directories. Thus, code needs to be run at the root-level to avoid `ModuleNotFoundError`. The location of [`Makefile`](../Makefile) reflects that.
+
+## Day 2: Gift Shop (Dec 4)
+
+### Reqs
+Part 1 Goal: sum of invalid IDs
+- Invalid IDs:
+    - Part of the provided range
+    - Sequence of digits repeating **twice** (e.g.: `11`, `22`, `6464`, `123123`)
+        - => means that we can check if the length of the string is even (# of digits in the number) and check for all variations in the first half
+    - Starts with a **leading** `0`
+- Parse input:
+    - Single line; entries separated by `,`
+    - Ranges are inclusive
+    - Min ID and max ID separated by a `-`
+
+### Coding
+
+Ended up using string manipulation + integers. We only need to check for the numbers constructed following the patterns (instead of if every number in the range matches the pattern).
+
+Maybe part 2 I brute force instead...
+
+## Day 3: Lobby (Dec 4)
+
