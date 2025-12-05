@@ -4,8 +4,7 @@ from os import path
 def read_to_list(filename, cast_fn=str):
     """
     assumes filename is relative to the calling file and a simple file with values per line
-    and reads it into a list. casts the elements according
-    to cast_fn
+    and reads it into a list. casts the elements according to cast_fn. ignores empty lines.
     """
     caller_frame = stack()[1]
     caller_file = caller_frame.filename
